@@ -1,9 +1,8 @@
-import django_filters
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, generics, filters
 from rest_framework.permissions import AllowAny
 
-from rest_apis.serializers import UserSerializer, GroupSerializer
+from rest_apis.serializers import UserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -14,13 +13,6 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = (AllowAny,)
 
-
-# class GroupViewSet(viewsets.ModelViewSet):
-#     """
-#     API endpoint that allows groups to be viewed or edited.
-#     """
-#     queryset = Group.objects.all()
-#     serializer_class = GroupSerializer
 
 class UserListView(generics.ListAPIView):
     queryset = User.objects.all()

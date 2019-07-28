@@ -1,8 +1,7 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import Http404
 from rest_framework import viewsets, generics, filters, status
-from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
